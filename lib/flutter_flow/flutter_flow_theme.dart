@@ -32,6 +32,11 @@ abstract class FlutterFlowTheme {
   late Color error;
   late Color info;
 
+  late Color borderColor;
+  late Color heart;
+  late Color potion;
+  late Color listBackground;
+
   @Deprecated('Use displaySmallFamily instead')
   String get title1Family => displaySmallFamily;
   @Deprecated('Use displaySmall instead')
@@ -103,22 +108,27 @@ class LightModeTheme extends FlutterFlowTheme {
   @Deprecated('Use tertiary instead')
   Color get tertiaryColor => tertiary;
 
-  late Color primary = const Color(0xFFDA2C38);
-  late Color secondary = const Color(0xFFF1E4B3);
-  late Color tertiary = const Color(0xFFB6D6B8);
-  late Color alternate = const Color(0xFFE9D9C3);
-  late Color primaryText = const Color(0xFF3A2F2A);
-  late Color secondaryText = const Color(0xFFCBBBA0);
-  late Color primaryBackground = const Color(0xFFE9D9C3);
-  late Color secondaryBackground = const Color(0xFFF9F5E3);
-  late Color accent1 = const Color(0xFF6BA368);
-  late Color accent2 = const Color(0xFFE4A84A);
-  late Color accent3 = const Color(0xFF8B1E3F);
-  late Color accent4 = const Color(0xFFA79885);
-  late Color success = const Color(0xFF6BA368);
-  late Color warning = const Color(0xFFE4A84A);
-  late Color error = const Color(0xFF8B1E3F);
-  late Color info = const Color(0xFF4A90E2);
+  late Color primary = const Color(0xFFF9E7BC);
+  late Color secondary = const Color(0xFFB38E5A);
+  late Color tertiary = const Color(0xFFDAB980);
+  late Color alternate = const Color(0xFF251505);
+  late Color primaryText = const Color(0xFFDAB980);
+  late Color secondaryText = const Color(0xFFF8F3EC);
+  late Color primaryBackground = const Color(0xFF362211);
+  late Color secondaryBackground = const Color(0xFFB38E5A);
+  late Color accent1 = const Color(0xFFE2CBA3);
+  late Color accent2 = const Color(0xFFC8A66D);
+  late Color accent3 = const Color(0xFFD6C2A2);
+  late Color accent4 = const Color(0xFFC2A76D);
+  late Color success = const Color(0xFFA8E6CE);
+  late Color warning = const Color(0xFFFFD54F);
+  late Color error = const Color(0xFFEF5350);
+  late Color info = const Color(0xFF64B5F6);
+
+  late Color borderColor = Color(0xFF6E4B23);
+  late Color heart = Color(0xFFDA372E);
+  late Color potion = Color(0xFF7BC2C3);
+  late Color listBackground = Color(0xFF422810);
 }
 
 abstract class Typography {
@@ -159,109 +169,109 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Urbanist';
-  TextStyle get displayLarge => GoogleFonts.getFont(
-        'Urbanist',
+  String get displayLargeFamily => 'DOSMyungho';
+  TextStyle get displayLarge => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 52.0,
       );
-  String get displayMediumFamily => 'Urbanist';
-  TextStyle get displayMedium => GoogleFonts.getFont(
-        'Urbanist',
+  String get displayMediumFamily => 'DOSMyungho';
+  TextStyle get displayMedium => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Urbanist';
-  TextStyle get displaySmall => GoogleFonts.getFont(
-        'Urbanist',
-        color: theme.primaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 36.0,
-      );
-  String get headlineLargeFamily => 'Urbanist';
-  TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Urbanist',
+  String get displaySmallFamily => 'DOSMyungho';
+  TextStyle get displaySmall => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 36.0,
       );
-  String get headlineMediumFamily => 'Urbanist';
-  TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Urbanist',
+  String get headlineLargeFamily => 'DOSMyungho';
+  TextStyle get headlineLarge => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.primaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 24.0,
+        fontWeight: FontWeight.normal,
+        fontSize: 36.0,
       );
-  String get headlineSmallFamily => 'Urbanist';
-  TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Urbanist',
+  String get headlineMediumFamily => 'DOSMyungho';
+  TextStyle get headlineMedium => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Urbanist';
-  TextStyle get titleLarge => GoogleFonts.getFont(
-        'Urbanist',
+  String get headlineSmallFamily => 'DOSMyungho';
+  TextStyle get headlineSmall => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.primaryText,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
+        fontSize: 24.0,
+      );
+  String get titleLargeFamily => 'DOSMyungho';
+  TextStyle get titleLarge => TextStyle(
+        fontFamily: 'DOSMyungho',
+        color: theme.primaryText,
+        fontWeight: FontWeight.normal,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Plus Jakarta Sans';
-  TextStyle get titleMedium => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+  String get titleMediumFamily => 'DOSMyungho';
+  TextStyle get titleMedium => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.info,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Plus Jakarta Sans';
-  TextStyle get titleSmall => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+  String get titleSmallFamily => 'DOSMyungho';
+  TextStyle get titleSmall => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.info,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.normal,
         fontSize: 18.0,
       );
-  String get labelLargeFamily => 'Plus Jakarta Sans';
-  TextStyle get labelLarge => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+  String get labelLargeFamily => 'DOSMyungho';
+  TextStyle get labelLarge => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.secondaryText,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Plus Jakarta Sans';
-  TextStyle get labelMedium => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+  String get labelMediumFamily => 'DOSMyungho';
+  TextStyle get labelMedium => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.secondaryText,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Plus Jakarta Sans';
-  TextStyle get labelSmall => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+  String get labelSmallFamily => 'DOSMyungho';
+  TextStyle get labelSmall => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.secondaryText,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Plus Jakarta Sans';
-  TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+  String get bodyLargeFamily => 'DOSMyungho';
+  TextStyle get bodyLarge => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.primaryText,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Plus Jakarta Sans';
-  TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+  String get bodyMediumFamily => 'DOSMyungho';
+  TextStyle get bodyMedium => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.primaryText,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Plus Jakarta Sans';
-  TextStyle get bodySmall => GoogleFonts.getFont(
-        'Plus Jakarta Sans',
+  String get bodySmallFamily => 'DOSMyungho';
+  TextStyle get bodySmall => TextStyle(
+        fontFamily: 'DOSMyungho',
         color: theme.primaryText,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
 }

@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '/main.dart';
+import '/backend/schema/structs/index.dart';
+
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
@@ -34,33 +35,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => NavBarPage(),
+      errorBuilder: (context, state) => MainPageWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => NavBarPage(),
+          builder: (context, _) => MainPageWidget(),
         ),
         FFRoute(
-          name: CharacterPageWidget.routeName,
-          path: CharacterPageWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'CharacterPage')
-              : CharacterPageWidget(),
+          name: MainPageTempWidget.routeName,
+          path: MainPageTempWidget.routePath,
+          builder: (context, params) => MainPageTempWidget(),
         ),
         FFRoute(
-          name: ShopPageWidget.routeName,
-          path: ShopPageWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'ShopPage')
-              : ShopPageWidget(),
+          name: RecordPageWidget.routeName,
+          path: RecordPageWidget.routePath,
+          builder: (context, params) => RecordPageWidget(),
         ),
         FFRoute(
-          name: TodoPageWidget.routeName,
-          path: TodoPageWidget.routePath,
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'TodoPage')
-              : TodoPageWidget(),
+          name: EquipmentPageWidget.routeName,
+          path: EquipmentPageWidget.routePath,
+          builder: (context, params) => EquipmentPageWidget(),
         ),
         FFRoute(
           name: MainPageWidget.routeName,
@@ -137,6 +132,7 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -154,6 +150,7 @@ class FFParameters {
       param,
       type,
       isList,
+      structBuilder: structBuilder,
     );
   }
 }

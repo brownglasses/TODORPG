@@ -1,4 +1,4 @@
-package com.mycompany.todorpg
+package com.mycompany.rtodo
 
 import io.flutter.embedding.android.FlutterActivity
 
